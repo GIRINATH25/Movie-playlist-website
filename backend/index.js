@@ -10,12 +10,14 @@ const app = express();
 require('dotenv').config();
 
 app.use(cors({
-    origin: '*',
+    origin: 'https://movie-playlist-tapeit.vercel.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     preflightContinue: false,
     optionsSuccessStatus: 204,
-    allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept,Authorization'
+    allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept,Authorization',
+    credentials: true 
   }));
+
 app.use(cookieParser());
 app.use(express.json());
 app.use('/', route);
