@@ -37,8 +37,6 @@ Make sure you have the following software installed on your machine:
 
    cd Movie-playlist-website/backend
    
-   cd ../backend
-
    npm install
 
    node index.js
