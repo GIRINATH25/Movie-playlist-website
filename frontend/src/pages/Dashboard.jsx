@@ -32,10 +32,6 @@ const Dashboard = () => {
       }
     };
 
-    fetchMovies();
-  }, [search]);
-
-  useEffect(()=>{
     const fetchall = async () => {
       try {
         const res = await axios.get(`/provider`);
@@ -46,8 +42,10 @@ const Dashboard = () => {
       }
     };
 
+    fetchMovies();
+
     fetchall();
-  },[])
+  }, [search]);
 
   return (
     <div>
