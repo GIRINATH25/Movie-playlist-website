@@ -2,6 +2,8 @@ import React from "react";
 import s from "../assets/styles/Box.module.css";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Box = ({ title, year, type, poster }) => {
 
@@ -11,7 +13,7 @@ const Box = ({ title, year, type, poster }) => {
       const playlistname = prompt("Enter a playlist name \n !!if you want to add this into your available playlist mention it's name");
       const user = Cookies.get("user");
       const res = await axios.post(`/addplaylist`, {playlistname,user,title,year,type, poster});
-      console.log(res.data);
+      toast.dark(res.data.message);
 
     }catch(err){
       console.log("Error: "+err);
