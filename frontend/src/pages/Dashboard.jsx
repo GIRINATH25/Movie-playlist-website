@@ -9,8 +9,8 @@ import Horizontelbox from "../components/Horizontelbox";
 const Dashboard = () => {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
-  const [filterdata1, setFilterdata1] = useState();
-  const [filterdata2, setFilterdata2] = useState();
+  const [filterdata1, setFilterdata1] = useState([]);
+  const [filterdata2, setFilterdata2] = useState([]);
 
   const handlefilter1 = (forfil) => {
     if (Array.isArray(forfil)) {
