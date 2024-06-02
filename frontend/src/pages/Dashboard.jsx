@@ -45,7 +45,7 @@ const Dashboard = () => {
     fetchMovies();
 
     fetchall();
-  }, [search]);
+  }, [search,location.reload()]);
 
   return (
     <div>
