@@ -1,0 +1,41 @@
+.con{
+    width: 280px;
+    background-color: #171b21;
+    height: 200px;
+    position: relative;
+    border-radius: 10%;
+    display: flex;
+}
+
+.image{
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10%;
+    margin-right: 2%;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: #171b21;
+}
+
+.playName{
+    word-wrap: break-word;
+    font-size:x-large;
+    background-color: #171b21;
+    margin-bottom: 10%;
+}
+
+.pbOrpv{
+    color: #999999;
+    background-color: #171b21;
+    font-size: small;
+}
+
+.pbOrpv span {
+    background-color: #171b21;
+}
