@@ -23,7 +23,7 @@ const Dashboard = () => {
     const fetchMovies = async () => {
       try {
         const res = await fetch(
-          `http://www.omdbapi.com/?i=tt3896198&apikey=76915d96&s=${search}&y=${search}`
+          `https://www.omdbapi.com/?i=tt3896198&apikey=76915d96&s=${search}&y=${search}`
         );
         const data = await res.json();
         setMovies(data.Search);
