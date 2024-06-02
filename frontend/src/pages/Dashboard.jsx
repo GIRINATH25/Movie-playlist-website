@@ -13,10 +13,19 @@ const Dashboard = () => {
   const [filterdata2, setFilterdata2] = useState();
 
   const handlefilter1 = (forfil) => {
-    setFilterdata1(forfil.filter((fil) => fil.visible === true));
+    if (Array.isArray(forfil)) {
+      setFilterdata1(forfil.filter((fil) => fil.visible === true));
+    } else {
+      console.log("Error: Expected an array, but received:", forfil);
+    }
   };
+  
   const handlefilter2 = (forfil) => {
-    setFilterdata2(forfil.filter((fil) => fil.user === Cookies.get("user")));
+    if (Array.isArray(forfil)) {
+      setFilterdata2(forfil.filter((fil) => fil.user === Cookies.get("user")));
+    } else {
+      console.log("Error: Expected an array, but received:", forfil);
+    }
   };
 
   useEffect(() => {
@@ -31,6 +40,7 @@ const Dashboard = () => {
     };
 
     fetchall();
+    fetchMovies();
   });
 
   const fetchMovies = async () => {
