@@ -20,18 +20,6 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const res = await fetch(
-          `https://www.omdbapi.com/?i=tt3896198&apikey=76915d96&s=${search}&y=${search}`
-        );
-        const data = await res.json();
-        setMovies(data.Search);
-      } catch (err) {
-        console.log("Error:" + err);
-      }
-    };
-
     const fetchall = async () => {
       try {
         const res = await axios.get(`/provider`);
@@ -42,10 +30,20 @@ const Dashboard = () => {
       }
     };
 
-    fetchMovies();
-
     fetchall();
-  }, [search,location.reload()]);
+  });
+
+  const fetchMovies = async () => {
+    try {
+      const res = await fetch(
+        `https://www.omdbapi.com/?i=tt3896198&apikey=76915d96&s=${search}&y=${search}`
+      );
+      const data = await res.json();
+      setMovies(data.Search);
+    } catch (err) {
+      console.log("Error:" + err);
+    }
+  };
 
   return (
     <div>
@@ -56,7 +54,10 @@ const Dashboard = () => {
           className={s.inputbox}
           type="text"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            fetchMovies();
+          }}
           placeholder="search & scroll down to see results"
         />
         {filterdata1 && filterdata1.length > 0 && (
