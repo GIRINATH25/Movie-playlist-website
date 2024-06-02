@@ -10,9 +10,12 @@ const app = express();
 require('dotenv').config();
 
 app.use(cors({
-    origin: env.allowOrigin,
-    credentials: true
-}));
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept,Authorization'
+  }));
 app.use(cookieParser());
 app.use(express.json());
 app.use('/', route);
