@@ -34,6 +34,8 @@ Make sure you have the following software installed on your machine:
 2. **backend**
 
    ```sh
+
+   cd Movie-playlist-website/backend
    
    cd ../backend
 
