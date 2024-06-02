@@ -30,6 +30,7 @@ const register = async(req,res)=>{
         res.json({"message": "Successfully registered","user":email});
     }catch(err){
         console.log(`Error: ${err}`);
+        res.json({message:err.message});
     }
 }
 
